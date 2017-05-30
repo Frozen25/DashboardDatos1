@@ -580,121 +580,6 @@ public class BTree<T extends Comparable<T>> {
         return result;
     }
     
-    //preorder
-    public void save(){
-        
-        save("Clientes");
-    }
-    
-    private String savePre(Node node) {
-
-        String result = "";
-        if (node != null) {
-            result = result + node.getAll() + ",";
-            result = result + savePre(node.left);
-            result = result + savePre(node.right);
-        }
-        return result;
-    }
-    
-    
-    public void save(String Filename){
-        String savestack = savePre (root);
-       
-        try {
-
-            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-
-            // root elements
-            Document doc = docBuilder.newDocument();
-            Element rootElement = doc.createElement("Clientes");
-            doc.appendChild(rootElement);
-
-            // staff elements
-
-
-
-            String[] parts = savestack.split(",");
-
-            for(int i=0;i<parts.length;i++)
-            {
-                String[] partes = parts[i].split(">");
-
-                Element client = doc.createElement("Cliente");
-                rootElement.appendChild(client);
-                // set attribute to staff element
-                Attr attr = doc.createAttribute("id");
-                attr.setValue(partes[0]);
-                client.setAttributeNode(attr);
-                // shorten way
-                // staff.setAttribute("id", "1");
-
-
-                // firstname elements
-                Element firstname = doc.createElement("Nombre");
-                firstname.appendChild(doc.createTextNode(partes[0]));
-                client.appendChild(firstname);
-
-                // lastname elements
-                Element lastname = doc.createElement("Correo");
-                lastname.appendChild(doc.createTextNode(partes[1]));
-                client.appendChild(lastname);
-
-                // nickname elements
-                Element nickname = doc.createElement("Activo");
-                nickname.appendChild(doc.createTextNode(partes[2]));
-                client.appendChild(nickname);
-
-                Element din = doc.createElement("Dinero");
-                din.appendChild(doc.createTextNode(partes[3]));
-                client.appendChild(din);
-                    
-
-                }   
-                
-                
-		
-
-		
-                
-		
-
-		// write the content into xml file
-		TransformerFactory transformerFactory = TransformerFactory.newInstance();
-		Transformer transformer = transformerFactory.newTransformer();
-		DOMSource source = new DOMSource(doc);
-		StreamResult result = new StreamResult(new File(System.getProperty("user.dir") +"\\"+ Filename +".xml"));
-
-		// Output to console for testing
-		// StreamResult result = new StreamResult(System.out);
-
-		transformer.transform(source, result);
-
-		System.out.println("File saved!");
-
-	  } catch (ParserConfigurationException pce) {
-		pce.printStackTrace();
-	  } catch (TransformerException tfe) {
-		tfe.printStackTrace();
-	  }
-
-        
-        
-             
-        
-    }
-        
-        
-        
-    
-    
-    
-    
-    
-    
-    
-
     public class Node {
 
         private T information;
@@ -715,40 +600,9 @@ public class BTree<T extends Comparable<T>> {
 
         char balance;
 
-        public Node(T information, Node parent) {
-            String temp = (String) information;
-                if (temp.contains(">"))
-                {
-                    String[] parts = temp.split(">");
-                    if (parts.length>=1)
-                    {
-                        this.information = (T) parts[0];
-                        this.nombre = parts[0];     
-                        this.email= " ";
-                        this.Active = false;
-                        this.money = 0;
-                    }
-                    if (parts.length>=2)
-                    {
-                        this.email = parts[1];
-                        this.Active = false;
-                    }
-                    if (parts.length>=3)
-                    {
-                        this.Active= Boolean.valueOf(parts[2]);
-                        this.money = 0;
-                    }
-                    if (parts.length>=4)
-                    {
-                        this.money = Float.valueOf(parts[3]);
-                    }
-                }
-                else
+        public Node(T information, Node parent) {         
                 {
                     this.information = information;
-                    this.nombre = (String) information;
-                    this.email= " ";
-                    this.money = 0;
                 }
             
 
