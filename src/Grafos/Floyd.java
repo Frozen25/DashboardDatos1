@@ -14,7 +14,7 @@ public class Floyd  {
     static int[][] graph;
     static int[][] recorridos;
     static boolean flag = true;
-    public static void main(int[][] ad){
+    public static void floyd(int[][] ad){
         graph = ad;
         size = ad.length;
         
