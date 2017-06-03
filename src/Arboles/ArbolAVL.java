@@ -209,9 +209,11 @@ public class ArbolAVL <B extends Comparable<B>>{
 	}
         
         
-        public void PostOrdenAVL()
+        public String PostOrden()
         {
+            impresor="";
             PostOrdenAVL (A);
+            return impresor;
         }
 	//Despliega la informacion en Postorden
 	private void PostOrdenAVL (NodoAVL Nodo){
@@ -221,24 +223,50 @@ public class ArbolAVL <B extends Comparable<B>>{
 		else{
 			PostOrdenAVL (Nodo.Izquierdo);
 			PostOrdenAVL (Nodo.Derecho);
-			impresor=impresor+"Autor: "+Nodo.getData();
+			impresor+=Nodo.getData()+" - ";
 		}
 	}
         
-        public void InordenAVL()
+        public String Inorden()
         {
+            impresor="";
             InordenAVL (A);
+            return impresor;
         }
-	//Despliega la informacion en Inorden
+	//Despliega la informacion en Postorden
 	private void InordenAVL (NodoAVL Nodo){
-		if (Nodo == null)
-			return;
+		if (Nodo == null){
+			return ;
+		}
 		else{
 			InordenAVL (Nodo.Izquierdo);
-			System.out.print(Nodo.getData()+"  ");
+                        impresor+=Nodo.getData()+" - ";
 			InordenAVL (Nodo.Derecho);
+			
 		}
 	}
+        
+        public String Preorden()
+        {
+            impresor="";
+            PreordenAVL (A);
+            return impresor;
+        }
+	//Despliega la informacion en Postorden
+	private void PreordenAVL (NodoAVL Nodo){
+		if (Nodo == null){
+			return ;
+		}
+		else{
+                    impresor+=Nodo.getData()+" - ";
+                    PreordenAVL (Nodo.Izquierdo);
+                    PreordenAVL (Nodo.Derecho);
+                        
+			
+		}
+	}
+        
+        
 	
 
 	
@@ -258,6 +286,7 @@ public class ArbolAVL <B extends Comparable<B>>{
         return null;
     }    
         
+
     
 	
 	

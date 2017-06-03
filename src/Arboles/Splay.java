@@ -1,19 +1,6 @@
 package Arboles;
 import java.io.*;
-import java.lang.*;
-import java.io.File;
-import java.util.Stack;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+
 
 
 //Definicion del arbol splay	
@@ -25,7 +12,11 @@ public class Splay<B extends Comparable<B>>{
   NodoSplay auxh;
   boolean bandera = true;
   String searchresult = "";
-  
+    
+  //Contructor
+  public Splay(){
+    raiz = null;
+  }
   //Inserta un elemento en un arbol splay
   public NodoSplay Insertar (B data){
 	    try{
@@ -64,11 +55,7 @@ public class Splay<B extends Comparable<B>>{
 	    }
 	return raiz;
   }
-  
-  //Contructor
-  public Splay(){
-    raiz = null;
-  }
+
   
   //rotacion zag zag
   public void zagzag(NodoSplay abuelo){
@@ -291,17 +278,7 @@ public class Splay<B extends Comparable<B>>{
     }
   }
   
-  //imprime en inorden el arbol splay
-  public void Postorden (NodoSplay root){
-  	if(root==null)
-  		return;
-  	else{
-  		Postorden (root.Hiz);
-  		Postorden (root.Hde);
-    	System.out.print (root.getData() + " ");
-    	
-  	}
-  }
+
   
   //elimina un elemento de un arbol splay y coloca su antecesor
   //en la raiz	
@@ -436,7 +413,53 @@ public class Splay<B extends Comparable<B>>{
       return true;
   }
 
+  
+    public String Postorden(){
+        searchresult = "";
+        Postorden(raiz);
+        return searchresult;
+    }
 
+  
+    private void Postorden(NodoSplay root){
+        if(root!=null){
+            Postorden (root.Hiz);
+            Postorden (root.Hde);
+            searchresult += root.getData()+" - ";
+        }
+    }  
+
+    public String Preorden(){
+        searchresult = "";
+        Preorden(raiz);
+        return searchresult;
+    }
+
+  
+    private void Preorden(NodoSplay root){
+        if(root!=null){
+            searchresult += root.getData()+" - ";
+            Preorden (root.Hiz);
+            Preorden (root.Hde);
+            
+        }
+    }  
+    
+    public String Inorden(){
+        searchresult = "";
+        Inorden(raiz);
+        return searchresult;
+    }
+
+  
+    private void Inorden(NodoSplay root){
+        if(root!=null){
+            Inorden (root.Hiz);
+            searchresult += root.getData()+" - ";
+            Inorden (root.Hde);
+        }
+    }  
+  
 
   
   

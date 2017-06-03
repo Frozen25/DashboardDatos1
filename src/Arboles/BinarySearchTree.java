@@ -166,7 +166,7 @@ public class BinarySearchTree <B extends Comparable<B>>{
         }
     }
     
-    public String displayIn(){
+    public String Inorden(){
         lookstack = "";
         displayIn(root);
         return lookstack;
@@ -175,21 +175,40 @@ public class BinarySearchTree <B extends Comparable<B>>{
     private void displayIn(NodoArbolBinario root){
         if(root!=null){
             displayIn(root.left);
-            lookstack += root.getData();
+            lookstack += root.getData()+" - ";
             //System.out.print(" " + root.getData().getName());
             displayIn(root.right);
         }
     }
     
-    public void displayPre(){
-        displayPre(root);      
+    public String Preorden(){
+        lookstack = "";
+        displayPre(root);
+        return lookstack;
     }
     
     private void displayPre(NodoArbolBinario root){
         if(root!=null){
-            System.out.print(" " + root.getData());
+            lookstack += root.getData()+" - ";
             displayPre(root.left);
+            //System.out.print(" " + root.getData().getName());
             displayPre(root.right);
+        }
+    }
+    
+    public String Postorden(){
+        lookstack = "";
+        displayPost(root);
+        return lookstack;
+    }
+    
+    private void displayPost(NodoArbolBinario root){
+        if(root!=null){
+            
+            displayPost(root.left);
+            //System.out.print(" " + root.getData().getName());
+            displayPost(root.right);
+            lookstack += root.getData()+" - ";
         }
     }
     
