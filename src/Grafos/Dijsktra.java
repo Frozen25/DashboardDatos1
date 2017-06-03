@@ -1,12 +1,10 @@
 
 
 package Grafos;
-// A Java program for Dijkstra's single source shortest path algorithm.
-// The program is for adjacency matrix representation of the graph
 
 
 
-public class Dijsktra_2
+public class Dijsktra
 {
     // A utility function to find the vertex with minimum distance value,
     // from the set of vertices not yet included in shortest path tree
