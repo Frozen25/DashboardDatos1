@@ -22,7 +22,7 @@ public class InsertionSort {
                greater than key, to one position ahead
                of their current position */
             while (j>=0 && ((((Comparable) (arr[j])).compareTo(key)) > 0))
-            {
+            { 
                 arr[j+1] = arr[j];
                 j = j-1;
             }

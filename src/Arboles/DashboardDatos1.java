@@ -6,12 +6,14 @@
 package Arboles;
 import Algoritmos1.*;
 import static Algoritmos1.BubbleSort.*;
+import static Algoritmos1.BusBinario.busquedaBinaria;
 import static Algoritmos1.InsertionSort.*;
 import static Algoritmos1.SelectionSort.*;
 import static Algoritmos1.ShellSort.*;
 import static Algoritmos1.MergeSort.*;
 import Grafos.Dijkstra;
 import static Grafos.Dijkstra.*;
+import static Grafos.Dijsktra_2.dijkstra;
 import Grafos.Floyd;
 import static Grafos.Floyd.*;
 import static Grafos.Warshall.*;
@@ -41,6 +43,9 @@ public class DashboardDatos1 {
         floyd(q);
         System.out.println("Warshall");
         warshall(q);
+        System.out.println("dijkstra");
+        dijkstra(q,2);
+        
         /*
         int w[][]={{0,5,0,8,0},{0,0,6,9,0},{0,0,0,0,4},{0,0,2,0,7},{0,5,0,0,0}};
         //int q[][]={{1,2},{6,4}};
@@ -64,14 +69,19 @@ public class DashboardDatos1 {
         
         */
         
+
+        String a[] = {"1", "2","x","b", "a"};
+        busquedaBinaria(a,"x");
+        Integer[] z  = {9,8,7,6,5,4,3,2,1};
+        busquedaBinaria(z,5);
+        
+    
         
         
         
-        
-    String a[] = {"1", "2","x","b", "a"};
     int b[] = {1,6,3,54,5,12,75,-1};
     
-    int[] z  = {9,8,7,6,5,4,3,2,1};
+    
     String[] unsorted = {"bab","z", "4","u" , "a"};
     
     //selection_sort (unsorted);
@@ -85,7 +95,7 @@ public class DashboardDatos1 {
         }
     System.out.println();
     
-    mergesort(z);
+    shellSort(z);
     
     for(Integer i : z){
             System.out.print(i + " ");
