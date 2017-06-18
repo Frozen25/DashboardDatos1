@@ -79,14 +79,7 @@ public class Warshall
     
     
     public static void imprimir(){
-        for(int[] i : graph){
-            for(Integer b : i){
-                System.out.print(b + "\t");
-            }
-            System.out.print("\n");
-        }
-        System.out.println("");
-        
+       
         
         for(int[] i : recorridos){
             for(Integer b : i){
@@ -110,8 +103,6 @@ public class Warshall
     public static int[][] recorridos(){
         return recorridos;
     }
-    public static int[][] graph(){
-        return graph;
-    }
+
     
 }
