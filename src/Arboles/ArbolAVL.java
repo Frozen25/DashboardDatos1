@@ -7,7 +7,7 @@ package Arboles;
 
 
 //Arbol AVl
-public class ArbolAVL <B extends Comparable<B>>{
+public class ArbolAVL <B>{
 	String impresor="";
 	NodoAVL A;
 	boolean Hh;
@@ -33,7 +33,7 @@ public class ArbolAVL <B extends Comparable<B>>{
 		else
                     // 2 > 1 = true
                     //("u".compareTo("d")>0)
-			if (R.getData().compareTo(Nodo.getData()) >0){
+			if (((Comparable)R.getData()).compareTo(Nodo.getData()) >0){
 				R.Izquierdo=InsertarBalanceado(R.Izquierdo,Nodo);
 				if (Hh)
 					switch(R.Factbalance){
@@ -60,7 +60,7 @@ public class ArbolAVL <B extends Comparable<B>>{
 					}		
 			}
 			else{	
-			if (Nodo.getData().compareTo(R.getData()) >0){
+			if (((Comparable)Nodo.getData()).compareTo(R.getData()) >0){
 				R.Derecho=InsertarBalanceado(R.Derecho, Nodo);
 				if (Hh)
 				switch(R.Factbalance){
@@ -179,7 +179,7 @@ public class ArbolAVL <B extends Comparable<B>>{
 				Aux = null;
 			}
 
-                        if (((String)data).compareTo(Aux.getData()) >0)
+                        if (((Comparable)data).compareTo(Aux.getData()) >0)
                                 Aux = Aux.Derecho;
                         else{
                                 Aux = Aux.Izquierdo;
@@ -270,14 +270,14 @@ public class ArbolAVL <B extends Comparable<B>>{
 	
 
 	
-    public String get(B data){
+    public Object get(B data){
         NodoAVL current = A;
         while(current!=null){
             if(current.getData()==data){
             	
                 return current.getData();
             }else 
-            	if(current.getData().compareTo((String)data) > 0){
+            	if(((Comparable)current.getData()).compareTo((String)data) > 0){
                     current = current.Izquierdo;
             }else{
                     current = current.Derecho;

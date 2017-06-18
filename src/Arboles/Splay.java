@@ -4,7 +4,7 @@ import java.io.*;
 
 
 //Definicion del arbol splay	
-public class Splay<B extends Comparable<B>>{
+public class Splay<B>{
   int cont;
   String codigot;
   NodoSplay raiz;
@@ -31,7 +31,7 @@ public class Splay<B extends Comparable<B>>{
 	        auxp = null;
 	        auxh = raiz;
 	        while (auxh != null){
-	          if (((String)data).compareTo(auxh.getData()) <= 0 ){
+	          if (((Comparable)data).compareTo(auxh.getData()) <= 0 ){
 	            auxp = auxh;
 	            auxh = auxh.Hiz;
 	          }
@@ -41,7 +41,7 @@ public class Splay<B extends Comparable<B>>{
 	          }
 	        }
 	        NodoSplay nuevo = new NodoSplay (data);
-	        if (auxp.getData().compareTo((String)data) < 0){
+	        if (((Comparable)auxp.getData()).compareTo((B)data) < 0){
 	          auxp.Hde = nuevo;
 	          Subir (auxp, nuevo);
 	        }
@@ -265,7 +265,7 @@ public class Splay<B extends Comparable<B>>{
       NodoSplay padre = null;
       NodoSplay hijo = raiz;
       while (hijo != nodo){
-        if (nodo.getData().compareTo(hijo.getData()) <= 0){
+        if (((Comparable)nodo.getData()).compareTo(hijo.getData()) <= 0){
           padre = hijo;
           hijo = hijo.Hiz;
         }
@@ -282,7 +282,7 @@ public class Splay<B extends Comparable<B>>{
   
   //elimina un elemento de un arbol splay y coloca su antecesor
   //en la raiz	
-  public NodoSplay Eliminar (String codl){
+  public NodoSplay Eliminar (B codl){
     if (codl == raiz.getData()){
       NodoSplay borrado = raiz;
       if ((raiz.Hiz == null) && (raiz.Hde == null)){
@@ -313,7 +313,7 @@ public class Splay<B extends Comparable<B>>{
       NodoSplay padre = null;
       NodoSplay hijo = raiz;
       while (hijo.getData() != codl){
-        if (codl.compareTo(hijo.getData()) <= 0){
+        if (((Comparable)codl).compareTo(hijo.getData()) <= 0){
           padre = hijo;
           hijo = hijo.Hiz;
         }
@@ -324,7 +324,7 @@ public class Splay<B extends Comparable<B>>{
       }
       Subir (padre, hijo);
       NodoSplay rai = raiz;
-      Eliminar (raiz.getData());
+      Eliminar ((B)raiz.getData());
       return rai;
     }
   }
@@ -341,8 +341,8 @@ public class Splay<B extends Comparable<B>>{
     return aux;
   }
   
-  //buscar un elemento y lo sube a la raiz
-  public NodoSplay Buscar (String codl){
+    //buscar un elemento y lo sube a la raiz
+  public NodoSplay Buscar (B codl){
   
   	try{
   		FileWriter fw = new FileWriter (codigot+".txt", true);
@@ -360,7 +360,7 @@ public class Splay<B extends Comparable<B>>{
 	      salida.println("Rotacion para busqueda: ");
 	      salida.close();
 	      while ((hijo != null) && (hijo.getData()!= codl)){
-	        if (codl.compareTo(hijo.getData()) <= 0){
+	        if (((Comparable)codl).compareTo(hijo.getData()) <= 0){
 	          padre = hijo;
 	          hijo = hijo.Hiz;
 	        }
@@ -395,12 +395,71 @@ public class Splay<B extends Comparable<B>>{
 	 return raiz;
   }
   
+  
+  //buscar un elemento y lo sube a la raiz
+  public NodoSplay Buscar (String codl){
+  
+  	try{
+  		FileWriter fw = new FileWriter (codigot+".txt", true);
+      	BufferedWriter bw = new BufferedWriter (fw);
+      	PrintWriter salida = new PrintWriter (bw);
+	    if (codl == raiz.getData()){
+	    	salida.println("Rotacion para busqueda: ");
+	    	salida.println("Sin rotacion");
+	      	salida.println("Elemento encontrado. Raiz: " + raiz.getData());
+          	salida.close();
+	 	}
+	    else{
+	      NodoSplay padre = null;
+	      NodoSplay hijo = raiz;
+	      salida.println("Rotacion para busqueda: ");
+	      salida.close();
+	      while ((hijo != null) && (hijo.getData()!= codl)){
+	        if (((Comparable)codl).compareTo(hijo.getData()) <= 0){
+	          padre = hijo;
+	          hijo = hijo.Hiz;
+	        }
+	        else{
+	          padre = hijo;
+	          hijo = hijo.Hde;
+	        }
+	      }
+	      if (hijo == null){
+	        NodoSplay aux = TieneAbuelo (padre);
+	        if (padre != raiz)
+	          Subir (aux, padre);
+	        FileWriter fw1 = new FileWriter (codigot+".txt", true);
+      		BufferedWriter bw1 = new BufferedWriter (fw1);
+	        PrintWriter salida1 = new PrintWriter (bw1);
+			salida1.println("El elemento no se encuentra. Raiz: " + raiz.getData());
+          	salida1.close();
+	      }
+	      else{
+	        Subir (padre, hijo);
+	        FileWriter fw2 = new FileWriter (codigot+".txt", true);
+      		BufferedWriter bw2 = new BufferedWriter (fw2);
+	        PrintWriter salida2 = new PrintWriter (bw2);
+	        salida2.println("Elemento encontrado. Raiz: " + raiz.getData());
+          	salida2.close();
+	      }
+	    }
+	 }
+	 catch(Exception e){
+	 	
+	 }
+	 return raiz;
+  }
+  
+
+  
+  
+  
   //retorna si es miembro un elemento
   public boolean Miembro (String dat,NodoSplay rai){
   	raiz=rai;
     NodoSplay hijo = raiz;
     while ((hijo != null) && (hijo.getData() != dat)){
-      if (dat.compareTo(hijo.getData()) <= 0){
+      if (((Comparable)dat).compareTo(hijo.getData()) <= 0){
         hijo = hijo.Hiz;
       }
       else{

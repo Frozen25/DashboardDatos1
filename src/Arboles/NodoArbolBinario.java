@@ -9,10 +9,10 @@ package Arboles;
  *
  * @author Alexis
  */
-public class NodoArbolBinario <B extends Comparable<B>>{
+public class NodoArbolBinario <B>{
     private B data;
-    NodoArbolBinario left;
-    NodoArbolBinario right;	
+    public NodoArbolBinario left;
+    public NodoArbolBinario right;	
     
     public NodoArbolBinario(B data){
         this.data = data;
@@ -21,8 +21,8 @@ public class NodoArbolBinario <B extends Comparable<B>>{
     }
 
     
-    public String getData()
+    public B getData()
     {
-        return (String) data;
+        return  data;
     }
 }

@@ -14,7 +14,7 @@ package Arboles;
 
 
 
-public class BinarySearchTree <B extends Comparable<B>>{
+public class BinarySearchTree <B>{
     public   NodoArbolBinario root;
     private  String lookstack;
     public BinarySearchTree(){
@@ -26,7 +26,7 @@ public class BinarySearchTree <B extends Comparable<B>>{
         while(current!=null){
             if(current.getData()==id){
                     return true;
-            }else if(current.getData().compareTo((String)id)>0){
+            }else if(((Comparable)current.getData()).compareTo((B)id)>0){
                     current = current.left;
             }else{
                     current = current.right;
@@ -39,7 +39,7 @@ public class BinarySearchTree <B extends Comparable<B>>{
         while(current!=null){
             if(current.getData()==id){
                     return current;
-            }else if(current.getData().compareTo((String) id)>0){
+            }else if(((Comparable)current.getData()).compareTo((B) id)>0){
                     current = current.left;
             }else{
                     current = current.right;
@@ -54,7 +54,7 @@ public class BinarySearchTree <B extends Comparable<B>>{
         boolean isLeftChild = false;
         while(!current.getData().equals(id)){
             parent = current;
-            if(current.getData().compareTo((String)id)>0){
+            if(((Comparable)current.getData()).compareTo((B)id)>0){
                 isLeftChild = true;
                 current = current.left;
             }else{
@@ -130,30 +130,33 @@ public class BinarySearchTree <B extends Comparable<B>>{
         return successsor;
     }
     public void insert(B id){
-        NodoArbolBinario newNode = new NodoArbolBinario(id);
-        if(root==null){
-            root = newNode;
-            return;
-        }
-        NodoArbolBinario current = root;
-        NodoArbolBinario parent = null;
-        while(true){
-            parent = current;
-            if(current.getData().compareTo((String) id)>0){				
-                current = current.left;
-                if(current==null){
-                    parent.left = newNode;
-                    return;
-                }
-            }else{
-                current = current.right;
-                if(current==null){
-                    parent.right = newNode;
-                    return;
-                }
-            }
-        }
-    }
+		NodoArbolBinario newNode = new NodoArbolBinario(id);
+		if(root==null){
+			root = newNode;
+			return;
+		}
+		NodoArbolBinario current = root;
+		NodoArbolBinario parent = null;
+		while(true){
+			parent = current;
+                        if ((((Comparable)current.getData()).compareTo(id))==0){			
+                                return;
+				}
+			if ((((Comparable)current.getData()).compareTo(id))>0){			
+				current = current.left;
+				if(current==null){
+					parent.left = newNode;
+					return;
+				}
+			}else{
+				current = current.right;
+				if(current==null){
+					parent.right = newNode;
+					return;
+				}
+			}
+		}
+	}  
     public void display(){
         display(root);      
     }

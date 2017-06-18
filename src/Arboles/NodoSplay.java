@@ -1,6 +1,6 @@
 package Arboles;
 //Nodo splay
-class NodoSplay <B extends Comparable<B>>{
+class NodoSplay <B>{
   private B datos;
   NodoSplay Hiz;
   NodoSplay Hde;
@@ -10,8 +10,8 @@ class NodoSplay <B extends Comparable<B>>{
 	    Hiz = null;
 	    Hde = null;
 	  }
-  public String getData(){
-      return (String) datos;
+  public B getData(){
+      return  datos;
   }
   public void setData(B data){
       datos = data;
