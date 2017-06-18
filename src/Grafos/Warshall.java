@@ -14,63 +14,104 @@ package Grafos;
 
 public class Warshall
 {
-    private static int V;    
-    private static boolean[][] tc;
-    /** Function to make the transitive closure **/
-    public static void getTC(int[][] graph)
-    {
-        V = graph.length;
-        tc = new boolean[V][V];
-        for (int i = 0; i < V; i++) 
-        {    
-            for (int j = 0; j < V; j++) 
-                if (graph[i][j] != 0)
-                    tc[i][j] = true;
-            tc[i][i] = true;
+    private static int size;
+    private static int[][] graph;
+    private static int[][] recorridos;
+    private static boolean flag = true;
+    
+    public static void warshall(int[][] ad){
+        graph = ad;
+        size = ad.length;
+        recorridos = new int [size][size];
+        change_vals();
+        while (flag){
+            flag=false;
+            modify();
         }
-        for (int i = 0; i < V; i++) 
-        {
-            for (int j = 0; j < V; j++) 
-            {
-                if (tc[j][i]) 
-                    for (int k = 0; k < V; k++) 
-                        if (tc[j][i] && tc[i][k]) 
-                            tc[j][k] = true;             
-            }
-        }
+        towarshall();
         
     }
-    /** Funtion to display the trasitive closure **/
-    public static void displayTC()
-    {
-        System.out.println("\nTransitive closure :\n");
-        System.out.print(" ");
-        for (int v = 0; v < V; v++)
-           System.out.print("   " + v );
-        System.out.println();
-        for (int v = 0; v < V; v++) 
-        {
-            System.out.print(v +" ");
-            for (int w = 0; w < V; w++) 
-            {
-                if (tc[v][w]) 
-                    System.out.print("  * ");
-                else                  
-                    System.out.print("    ");
+    private static void towarshall(){
+        for (int i=0; i<size; i++){
+            for (int j=0; j<size; j++){
+                if (recorridos[i][j]!=(-1)){
+                    recorridos[i][j] = 1;
+                    }else{
+                    recorridos[i][j]=0;
+                }
+                }
             }
-            System.out.println();
         }
-    }    
- 
-    /** Main function **/
-    public static void warshall (int[][]graph) 
-    {
-        
-
- 
-        
- 
-        getTC(graph);
-        displayTC();
+    
+    
+    private static void modify(){
+        for (int k=0; k<size; k++){
+                for(int i=0; i<size; i++){
+                    for(int j=0; j<size; j++){
+                        if ((i!=k)&&(j!=k)&&(i!=j)){
+                            if(graph[i][k]+graph[k][j] < graph[i][j]){
+                                flag = true;
+                                recorridos[i][j]=k;
+                                graph[i][j] = graph[i][k]+graph[k][j];
+                            }
+                        }
+                    }
+                }
+            }
     }
+    
+    private static void change_vals(){
+    for (int i=0; i<size; i++){
+            for (int j=0; j<size; j++){
+                if (i!=j){
+                    if ((graph[i][j]==0)){
+                        graph[i][j]=9999;
+                        recorridos[i][j]=-1;
+                    }
+                    else{
+                        recorridos[i][j]=i;
+                    }
+                }
+            }
+        }
+    
+    }
+    
+    
+    public static void imprimir(){
+        for(int[] i : graph){
+            for(Integer b : i){
+                System.out.print(b + "\t");
+            }
+            System.out.print("\n");
+        }
+        System.out.println("");
+        
+        
+        for(int[] i : recorridos){
+            for(Integer b : i){
+                System.out.print(b + "\t");
+            }
+            System.out.print("\n");
+        }
+        System.out.println("");
+    }
+    
+    public static void imprimir(int [][] matriz){
+    for(int[] i : matriz){
+            for(int b : i){
+                System.out.print(b + "\t");
+            }
+            System.out.print("\n");
+        }
+        System.out.println("");
+    }
+    
+    public static int[][] recorridos(){
+        return recorridos;
+    }
+    public static int[][] graph(){
+        return graph;
+    }
+    
 }

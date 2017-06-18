@@ -10,77 +10,29 @@ package Grafos;
  * @author Alexis
  */
 public class Floyd  {
-    static int size;
-    static int[][] graph;
-    static int[][] recorridos;
-    static boolean flag = true;
+    private static int size;
+    private static int[][] graph;
+    private static int[][] recorridos;
+    private static boolean flag = true;
+    
     public static void floyd(int[][] ad){
         graph = ad;
         size = ad.length;
-        
         recorridos = new int [size][size];
-        
-
         change_vals();
-        
-        /*
-        for(int[] i : graph){
-            for(Integer b : i){
-                System.out.print(b + " ");
-            }
-            System.out.print("\n");
-        }
-        System.out.println("");
-        
-        
-        for(int[] i : recorridos){
-            for(Integer b : i){
-                System.out.print(b + " ");
-            }
-            System.out.print("\n");
-        }*/
-        //System.out.println("________________________");
-        
-        
-        
         while (flag){
             flag=false;
             modify();
         }
-        
-        for(int[] i : graph){
-            for(Integer b : i){
-                System.out.print(b + " ");
-            }
-            System.out.print("\n");
-        }
-        System.out.println("");
-        
-        
-        for(int[] i : recorridos){
-            for(Integer b : i){
-                System.out.print(b + " ");
-            }
-            System.out.print("\n");
-        }
-        System.out.println("");
-        
-        
-
         
     }
     private static void modify(){
         for (int k=0; k<size; k++){
                 for(int i=0; i<size; i++){
                     for(int j=0; j<size; j++){
-                        if(graph[i][j] == 9999)
-                            {
-                                flag = true;
-                            }
                         if ((i!=k)&&(j!=k)&&(i!=j)){
-                            
                             if(graph[i][k]+graph[k][j] < graph[i][j]){
-                                
+                                flag = true;
                                 recorridos[i][j]=k;
                                 graph[i][j] = graph[i][k]+graph[k][j];
                             }
@@ -108,8 +60,41 @@ public class Floyd  {
     }
     
     
+    public static void imprimir(){
+        for(int[] i : graph){
+            for(Integer b : i){
+                System.out.print(b + "\t");
+            }
+            System.out.print("\n");
+        }
+        System.out.println("");
+        
+        
+        for(int[] i : recorridos){
+            for(Integer b : i){
+                System.out.print(b + "\t");
+            }
+            System.out.print("\n");
+        }
+        System.out.println("");
+    }
     
+    public static void imprimir(int [][] matriz){
+    for(int[] i : matriz){
+            for(int b : i){
+                System.out.print(b + "\t");
+            }
+            System.out.print("\n");
+        }
+        System.out.println("");
+    }
     
+    public static int[][] recorridos(){
+        return recorridos;
+    }
+    public static int[][] graph(){
+        return graph;
+    }
     
     
     
