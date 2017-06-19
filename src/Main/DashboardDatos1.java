@@ -27,6 +27,7 @@ public class DashboardDatos1 {
         //  Grafos
         //   BST    AVL   B   Splay
         String x="";
+        System.out.println(x+"\n");
    //----------------------------------------------------------------------------    
         if (x=="listas"){
             

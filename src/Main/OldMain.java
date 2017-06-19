@@ -52,7 +52,8 @@ public class OldMain {
         //  busqueda
         //  Grafos
         //   BST    AVL   B   Splay
-        String x="B";
+        String x="";
+        System.out.println(x+"\n");
    //----------------------------------------------------------------------------    
         if (x=="listas"){
             
