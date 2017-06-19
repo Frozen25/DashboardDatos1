@@ -1,0 +1,305 @@
+Elemento: uno
+Elemento: cinco
+zig 
+zag
+Rotacion para busqueda: 
+Sin rotacion
+Elemento encontrado. Raiz: cinco
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 10
+zig zag
+Elemento: A
+zag zag 
+zag
+Elemento: J
+zag
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: S
+zag
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: D
+zig zag
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: D
+zig zag
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: D
+zig zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig 
+Elemento encontrado. Raiz: 1
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: D
+zig zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig 
+Elemento encontrado. Raiz: 1
+Rotacion para busqueda: 
+zig zig 
+zag zig
+zag
+Elemento encontrado. Raiz: 5
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: D
+zig zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig 
+Elemento encontrado. Raiz: 1
+Rotacion para busqueda: 
+zig zig 
+zag zig
+zag
+Elemento encontrado. Raiz: 5
+Elemento: 1
+Elemento: 5
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: D
+zig zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig 
+Elemento encontrado. Raiz: 1
+Rotacion para busqueda: 
+zig zig 
+zag zig
+zag
+Elemento encontrado. Raiz: 5
+Elemento: 1
+Elemento: 5
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: D
+zig zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig 
+Elemento encontrado. Raiz: 1
+Rotacion para busqueda: 
+zig zig 
+zag zig
+zag
+Elemento encontrado. Raiz: 5
+Elemento: 1
+Elemento: 5
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: D
+zig zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig 
+Elemento encontrado. Raiz: 1
+Rotacion para busqueda: 
+zig zig 
+zag zig
+zag
+Elemento encontrado. Raiz: 5
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 40
+zag
+Elemento: 9
+zig zag
+Elemento: 10
+zag zig
+Elemento: 13
+zag zig
+Elemento: 50
+zag zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig zig 
+Elemento encontrado. Raiz: 1
+Rotacion para busqueda: 
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 4
+zig zag
+Elemento: 9
+zag zag
+Elemento: A
+zag
+Elemento: J
+zag
+Elemento: D
+zig zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig 
+Elemento encontrado. Raiz: 1
+Rotacion para busqueda: 
+zig zig 
+zag zig
+zag
+Elemento encontrado. Raiz: 5
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 40
+zag
+Elemento: 9
+zig zag
+Elemento: 10
+zag zig
+Elemento: 13
+zag zig
+Elemento: 50
+zag zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig zig 
+Elemento encontrado. Raiz: 1
+Rotacion para busqueda: 
+zag zig
+zag
+Elemento encontrado. Raiz: 40

@@ -4,7 +4,7 @@ package Grafos;
 
 
 
-public class Dijsktra
+public class Dijsktraa
 {
     // A utility function to find the vertex with minimum distance value,
     // from the set of vertices not yet included in shortest path tree
@@ -13,7 +13,7 @@ public class Dijsktra
     // Funtion that implements Dijkstra's single source shortest path
     // algorithm for a graph represented using adjacency matrix
     // representation
-    public static void dijkstra(int graph[][], int src)
+    public static void dijkstraa(int graph[][], int src)
     {
         V = graph.length;
         int dist[] = new int[V]; // The output array. dist[i] will hold

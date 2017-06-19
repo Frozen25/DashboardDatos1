@@ -9,7 +9,7 @@ package Algoritmos;
  *
  * @author Alexis
  */
-class QuickSort{
+public class QuickSort{
         public static <T>  void  quickSort(T[] arr) 
         {
             Sort(arr, 0, arr.length - 1);

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Algoritmos;
+package search;
 
 /**
  *
  * @author Alexis
  */
-public class BusBinario{
+public class BusquedaBinaria{
 
 
 	    public static <E>  int  busquedaBinaria(E[] data ,E key) 

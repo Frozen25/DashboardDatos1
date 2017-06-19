@@ -14,13 +14,13 @@ public class ListaSimple<T>
         public NodoSimple<T>  First, Last;
         private int size;
         public ListaSimple(){
-            First = null;
-            Last = null;
-            size = 0;
+            NodoSimple First = null;
+            NodoSimple Last = null;
+            int size = 0;
         }
         public boolean Vacio() { return size == 0; }
 
-       
+        public int getSize(){return size;}
 
 
 
@@ -86,11 +86,11 @@ public class ListaSimple<T>
         public void DeleteLast()
         {
             NodoSimple<T> n1 = First;
-            for (int i = 1; i < size ; i++)
+            while(n1.getNext()!=Last)
             {
                 n1 =n1.getNext();
             }
-            Last = n1.getNext();
+            Last = n1;
             Last.setNext(null);
             size--;
         }
