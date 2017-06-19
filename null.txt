@@ -303,3 +303,101 @@ Rotacion para busqueda:
 zag zig
 zag
 Elemento encontrado. Raiz: 40
+Elemento: 1a
+Elemento: 5a
+zag
+Elemento: 4a
+zig zag
+Elemento: 9a
+zag zag
+Elemento: Aa
+zag
+Elemento: Ja
+zag
+Elemento: Da
+zig zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig 
+Elemento encontrado. Raiz: 1a
+Rotacion para busqueda: 
+zig zig 
+zag zig
+zag
+Elemento encontrado. Raiz: 5a
+Elemento: 1
+Elemento: 5
+zag
+Elemento: 40
+zag
+Elemento: 9
+zig zag
+Elemento: 10
+zag zig
+Elemento: 13
+zag zig
+Elemento: 50
+zag zag
+Rotacion para busqueda: 
+zig zig 
+zig zig 
+zig zig 
+Elemento encontrado. Raiz: 1
+Rotacion para busqueda: 
+zag zig
+zag
+Elemento encontrado. Raiz: 40
+Elemento: 5
+Elemento: 1
+Elemento: 1
+Elemento: 1
+Elemento: 2
+zag
+Elemento: 3
+zag
+Rotacion para busqueda: 
+zig zig 
+Elemento encontrado. Raiz: 1
+Elemento: 1
+Elemento: 2
+zag
+Elemento: 1
+Elemento: 1
+Elemento: 2
+zag
+Elemento: 3
+zag
+Rotacion para busqueda: 
+zig zig 
+Elemento encontrado. Raiz: 1
+Elemento: 1
+Elemento: 2
+zag
+Elemento: 1
+Elemento: 1
+Elemento: 2
+zag
+Elemento: 3
+zag
+Rotacion para busqueda: 
+zig zig 
+Elemento encontrado. Raiz: 1
+Elemento: 1
+Elemento: 2
+zag
+Elemento: 1
+Elemento: 2
+zag
+Rotacion para busqueda: 
+zig 
+Elemento encontrado. Raiz: 1
+Elemento: 1
+Elemento: 1
+Elemento: 2
+zag
+Elemento: 3
+zag
+Rotacion para busqueda: 
+zig zig 
+Elemento encontrado. Raiz: 1

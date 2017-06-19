@@ -278,7 +278,9 @@ public class Splay<B>{
     }
   }
   
-
+  public NodoSplay Eliminar(){
+      return Eliminar((B)raiz.getData());
+  }
   
   //elimina un elemento de un arbol splay y coloca su antecesor
   //en la raiz	

@@ -15,6 +15,7 @@ import static Algoritmos.QuickSort.*;
 import static Algoritmos.RadixSort.*;
 import static Algoritmos.SelectionSort.*;
 import static Algoritmos.ShellSort.*;
+import static Grafos.Dijsktraa.*;
 
 import Grafos.Floyd;
 import static Grafos.Floyd.*;
@@ -47,7 +48,7 @@ public class DashboardDatos1 {
         //  busqueda
         //  Grafos
         //   BST    AVL   B   Splay
-        String x="ordenamiento";
+        String x="B";
    //----------------------------------------------------------------------------    
         if (x=="listas"){
             
@@ -332,8 +333,9 @@ int ra9=1;
             warshall(q);
             Warshall.imprimir(Warshall.recorridos());
 
-            //System.out.println("dijkstra");
-            //dijkstra(q,2);
+            System.out.println("Dijkstra");
+            System.out.print("\t From = " + 2 +"\n");
+            dijkstraa(q,2);
 
             int [][]w = {{0,10,3,4},{10,0,4,0},{3,4,0,1},{4,0,1,0}};
             int [][]ww = {{0,10,3,4,0},{10,0,4,0,33},{3,4,0,1,1},{4,0,1,0,7},{0,33,1,7,0}};

@@ -12,7 +12,7 @@ package Arboles;
 public class TestArboles {
     
     public static void main(String[] args){
-    String x = "BST";
+    String x = "Splay";
         
  //----------------------------------------------------------------------------       
     if (x=="AVL")    {  
