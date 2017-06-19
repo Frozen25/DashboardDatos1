@@ -3,36 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Arboles;
+package Main;
 
-//import static org.tec.algoritmos.Floyd.floyd;
-//import static org.tec.algoritmos.Floyd.*;
-//import org.tec.algoritmos.Floyd;
-import static Algoritmos.BubbleSort.*;
-import static Algoritmos.InsertionSort.*;
-import static Algoritmos.MergeSort.*;
-import static Algoritmos.QuickSort.*;
-import static Algoritmos.RadixSort.*;
-import static Algoritmos.SelectionSort.*;
-import static Algoritmos.ShellSort.*;
-import static Grafos.Dijsktraa.*;
+import org.tec.datastructures.*;
+import org.tec.gafos.*;
+import org.tec.search.*;
+import org.tec.sort.*;
 
-import Grafos.Floyd;
-import static Grafos.Floyd.*;
-import Grafos.Kruskal;
-import Grafos.Prim;
-import Grafos.Warshall;
-import static Grafos.Warshall.*;
-import static Grafos.Prim.*;
-import static Grafos.Kruskal.*;
-import listas.Cola;
-import listas.ListaCircular;
-import listas.ListaDoble;
-import listas.ListaSimple;
-import static search.BusquedaBinaria.*;
-import static search.BusquedaInterpolada.*;
-import static listas.ListaSimple.*;
-import listas.Pila;
+
 /**
  *
  * @author Alexis
@@ -48,7 +26,7 @@ public class DashboardDatos1 {
         //  busqueda
         //  Grafos
         //   BST    AVL   B   Splay
-        String x="B";
+        String x="";
    //----------------------------------------------------------------------------    
         if (x=="listas"){
             
@@ -244,13 +222,13 @@ int ra9=1;
             }
             System.out.println();
             
-            selectionSort(z);
-            bubbleSort(z);
-            insertionSort(z);
-            quickSort(z);
-            shellSort(z);
-            radixSort(z);
-            mergeSort(z);
+            SelectionSort.selectionSort(z);
+            BubbleSort.bubbleSort(z);
+            InsertionSort.insertionSort(z);
+            QuickSort.quickSort(z);
+            ShellSort.shellSort(z);
+            RadixSort.radixSort(z);
+            MergeSort.mergeSort(z);
             
             for(Object i : z){
             System.out.print(i + " ");
@@ -266,13 +244,13 @@ int ra9=1;
             }
             System.out.println();
             
-            selectionSort(a);
-            bubbleSort(a);
-            insertionSort(a);
-            quickSort(a);
-            shellSort(a);
-            //radix sort no
-            mergeSort(a);
+            SelectionSort.selectionSort(a);
+            BubbleSort.bubbleSort(a);
+            InsertionSort.insertionSort(a);
+            QuickSort.quickSort(a);
+            ShellSort.shellSort(a);
+            //RadixSort no
+            MergeSort.mergeSort(a);
             
             for(Object i : a){
             System.out.print(i + " ");
@@ -289,10 +267,12 @@ int ra9=1;
             
             System.out.println("Busqueda Binaria");
             String a_Ordenado[] = {"1", "2","a","b", "x"};
-            System.out.println(busquedaBinaria(a_Ordenado,"x"));
+            int busquedaBinaria = BusquedaBinaria.busquedaBinaria(a_Ordenado,"x");
+            System.out.println(busquedaBinaria);
             System.out.println("Busqueda Interpolada");
             Integer[] z_Ordenado  = {1,2,3,4,5,6,7,8,9};
-            System.out.println(busquedaBinariaI(z_Ordenado,5));
+            int busquedaBinariaI = BusquedaInterpolada.busquedaBinariaI(z_Ordenado,5);
+            System.out.println(busquedaBinariaI);
 
         }
         
@@ -321,7 +301,7 @@ int ra9=1;
                 System.out.print("\n");
             }
             System.out.println("Floyd");
-            floyd(q);
+            Floyd.floyd(q);
             int[][] graph = Floyd.graph();
             int[][] recorridos = Floyd.recorridos();
             System.out.println("Pesos");
@@ -330,12 +310,12 @@ int ra9=1;
             Floyd.imprimir(recorridos);
 
             System.out.println("Warshall");
-            warshall(q);
+            Warshall.warshall(q);
             Warshall.imprimir(Warshall.recorridos());
 
             System.out.println("Dijkstra");
             System.out.print("\t From = " + 2 +"\n");
-            dijkstraa(q,2);
+            Dijkstraa.dijkstraa(q,2);
 
             int [][]w = {{0,10,3,4},{10,0,4,0},{3,4,0,1},{4,0,1,0}};
             int [][]ww = {{0,10,3,4,0},{10,0,4,0,33},{3,4,0,1,1},{4,0,1,0,7},{0,33,1,7,0}};
